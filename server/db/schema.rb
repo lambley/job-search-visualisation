@@ -24,20 +24,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_102145) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "dogs", force: :cascade do |t|
-    t.string "breed"
-    t.string "weight_imperial"
-    t.string "weight_metric"
-    t.string "height_imperial"
-    t.string "height_metric"
-    t.string "bred_for"
-    t.string "breed_group"
-    t.string "life_span"
-    t.string "temperament"
-    t.string "reference_image_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end
