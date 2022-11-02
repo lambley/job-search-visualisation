@@ -4,7 +4,7 @@ RSpec.describe Application, type: :model do
   subject {
     described_class.new(
       date: DateTime.now - 100,
-      title: "Anything",
+      job_title: "Anything",
       company: "Anything",
       application_method: "Anything",
       response: "Anything",
@@ -29,6 +29,6 @@ RSpec.describe Application, type: :model do
   end
 
   it "creates a new instance when valid inputs are provided" do
-    
+    expect(subject).to be_valid
   end
 end
