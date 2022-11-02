@@ -13,19 +13,23 @@ RSpec.describe Application, type: :model do
   }
 
   it "has a valid title" do
-
+    subject.job_title = nil
+    expect(subject).to_not be_valid
   end
 
   it "has a valid company" do
-
+    subject.company = nil
+    expect(subject).to_not be_valid
   end
 
   it "has a valid application_method" do
-
+    subject.application_method = nil
+    expect(subject).to_not be_valid
   end
 
   it "has a valid response" do
-
+    subject.response = nil
+    expect(subject).to_not be_valid
   end
 
   it "creates a new instance when valid inputs are provided" do
