@@ -6,3 +6,9 @@ Finding my first developer role has been a gruelling process - and I'm still sea
 
 - Server - run `rails s`
 - Client - run `npm start`
+
+## TDD 
+
+- I have opted for a complete TDD approach with this project
+-  Backend tests for models and requests uses [`Rspec`](https://rspec.info/)
+-  Fronend tests will use [`Jest`](https://jestjs.io/docs/getting-started)
