@@ -1,27 +1,27 @@
 require 'rails_helper'
 
-RSpec.describe 'Applications', type: :request do
+RSpec.describe 'JobApplications', type: :request do
   describe 'GET /index' do
     it 'returns http success' do
-      get '/api/v1/applications'
+      get '/api/v1/job_applications'
       expect(response).to have_http_status(:success)
     end
 
-    it 'returns an assign application instances' do
-      get '/api/v1/applications'
-      expect(assigns(:applications)).to_not be(nil)
+    it 'returns an assign job_application instances' do
+      get '/api/v1/job_applications'
+      expect(assigns(:job_applications)).to_not be(nil)
     end
 
-    it 'returns all instances of applications' do
-      get '/api/v1/applications'
-      count = Application.all.count
-      expect(assigns(:applications).count).to eq(count)
+    it 'returns all instances of job_applications' do
+      get '/api/v1/job_applications'
+      count = JobApplication.all.count
+      expect(assigns(:job_applications).count).to eq(count)
     end
   end
 
   describe 'GET /show' do
     it 'returns http success' do
-      application = Application.create(
+      job_application = JobApplication.create(
         date: '21/10/2022',
         job_title: 'test',
         company: 'test company',
@@ -29,12 +29,12 @@ RSpec.describe 'Applications', type: :request do
         response: 'rejection',
         comment: 'comment'
       )
-      get "/api/v1/applications/#{application.id}"
+      get "/api/v1/job_applications/#{job_application.id}"
       expect(response).to have_http_status(:success)
     end
 
-    it 'assigns an application instance' do
-      application = Application.create(
+    it 'assigns a job_applications instance' do
+      job_application = JobApplication.create(
         date: '21/10/2022',
         job_title: 'test',
         company: 'test company',
@@ -42,28 +42,30 @@ RSpec.describe 'Applications', type: :request do
         response: 'rejection',
         comment: 'comment'
       )
-      get "/api/v1/applications/#{application.id}"
-      expect(assigns(:application)).to eq(application)
+      get "/api/v1/job_applications/#{job_application.id}"
+      expect(assigns(:job_application)).to eq(job_application)
     end
   end
 
   describe 'GET /create' do
     it 'returns http success' do
-      get '/api/v1/applications'
+      get '/api/v1/job_applications'
       expect(response).to have_http_status(:success)
     end
 
     it 'renders json on creation' do
-      post '/api/v1/applications', params: {
-        date: '21/10/2022',
-        job_title: 'test',
-        company: 'test company',
-        application_method: 'direct',
-        response: 'rejection',
-        comment: 'comment'
+      post '/api/v1/job_applications', params: {
+        job_application: {
+          date: '21/10/2022',
+          job_title: 'test',
+          company: 'test company',
+          application_method: 'direct',
+          response: 'rejection',
+          comment: 'comment'
+        }
       }
 
-      expect(response.content_type).to eq('application/json')
+      expect(response.content_type).to include('application/json')
     end
 
     it 'responds with a 201 and assigns new instance when given valid inputs' do
