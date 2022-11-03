@@ -101,6 +101,18 @@ RSpec.describe 'JobApplications', type: :request do
     end
 
     it 'responds with a 422 when given invalid inputs' do
+      post "/api/v1/job_applications", params: {
+        job_application: {
+          date: '',
+          job_title: '',
+          company: ' ',
+          application_method: '',
+          response: '',
+          comment: ''
+        }
+      }
+
+      expect(response).to have_http_status(422)
     end
   end
 
