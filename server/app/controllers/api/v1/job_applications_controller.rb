@@ -27,7 +27,12 @@ class Api::V1::JobApplicationsController < ApplicationController
     end
   end
 
-  def delete; end
+  def destroy
+    @job_application = JobApplication.find(params[:id])
+    @job_application.destroy
+
+    render json: @job_application, status: :accepted
+  end
 
   private
 

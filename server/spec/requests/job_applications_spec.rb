@@ -281,5 +281,35 @@ RSpec.describe 'JobApplications', type: :request do
 
       expect(assigns(:job_application)).to eq(job_application)
     end
+
+    xit 'deletes found entry' do
+      job_application = JobApplication.create(
+        date: '21/10/2022',
+        job_title: 'test',
+        company: 'test company',
+        application_method: 'direct',
+        response: 'rejection',
+        comment: 'comment'
+      )
+
+      delete "/api/v1/job_applications/#{job_application.id}"
+
+      expect(JobApplication.find(job_application)).to eq(nil)
+    end
+
+    xit 'responds with json containing deleted entry' do
+      job_application = JobApplication.create(
+        date: '21/10/2022',
+        job_title: 'test',
+        company: 'test company',
+        application_method: 'direct',
+        response: 'rejection',
+        comment: 'comment'
+      )
+
+      delete "/api/v1/job_applications/#{job_application.id}"
+
+      expect(response.headers).to include('application/json')
+    end
   end
 end
