@@ -17,7 +17,9 @@ class Api::V1::JobApplicationsController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+    @job_application = JobApplication.find(params[:id])
+  end
 
   def delete; end
 

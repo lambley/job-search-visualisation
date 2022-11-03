@@ -106,15 +106,59 @@ RSpec.describe 'JobApplications', type: :request do
 
   describe 'GET /update' do
     it 'returns http success' do
-      get '/api/v1/applications/update'
+      job_application = JobApplication.create(
+        date: '21/10/2022',
+        job_title: 'test',
+        company: 'test company',
+        application_method: 'direct',
+        response: 'rejection',
+        comment: 'comment'
+      )
+      get "/api/v1/job_applications/#{job_application.id}"
       expect(response).to have_http_status(:success)
+    end
+
+    it 'assigns a job application' do
+      job_application = JobApplication.create(
+        date: '21/10/2022',
+        job_title: 'test',
+        company: 'test company',
+        application_method: 'direct',
+        response: 'rejection',
+        comment: 'comment'
+      )
+      get "/api/v1/job_applications/#{job_application.id}"
+
+      expect(assigns(:job_application)).to eq(job_application)
     end
   end
 
   describe 'GET /delete' do
     it 'returns http success' do
-      get '/api/v1/applications/delete'
+      job_application = JobApplication.create(
+        date: '21/10/2022',
+        job_title: 'test',
+        company: 'test company',
+        application_method: 'direct',
+        response: 'rejection',
+        comment: 'comment'
+      )
+      get "/api/v1/job_applications/#{job_application.id}"
       expect(response).to have_http_status(:success)
+    end
+    
+    it 'assigns a job application' do
+      job_application = JobApplication.create(
+        date: '21/10/2022',
+        job_title: 'test',
+        company: 'test company',
+        application_method: 'direct',
+        response: 'rejection',
+        comment: 'comment'
+      )
+      get "/api/v1/job_applications/#{job_application.id}"
+
+      expect(assigns(:job_application)).to eq(job_application)
     end
   end
 end
