@@ -101,7 +101,7 @@ RSpec.describe 'JobApplications', type: :request do
     end
 
     it 'responds with a 422 when given invalid inputs' do
-      post "/api/v1/job_applications", params: {
+      post '/api/v1/job_applications', params: {
         job_application: {
           date: '',
           job_title: '',
@@ -113,6 +113,22 @@ RSpec.describe 'JobApplications', type: :request do
       }
 
       expect(response).to have_http_status(422)
+    end
+
+    it 'renders a json with errors on invalid inputs' do
+      post '/api/v1/job_applications', params: {
+        job_application: {
+          date: '',
+          job_title: '',
+          company: ' ',
+          application_method: '',
+          response: '',
+          comment: ''
+        }
+      }
+      errors = JSON.parse(response.body)['errors']
+      expect(response.content_type).to include('application/json')
+      expect(errors).to_not be(nil)
     end
   end
 
@@ -211,6 +227,30 @@ RSpec.describe 'JobApplications', type: :request do
       }
 
       expect(response).to have_http_status(422)
+    end
+
+    it 'renders a json with errors on invalid inputs' do
+      job_application = JobApplication.create(
+        date: '21/10/2022',
+        job_title: 'test',
+        company: 'test company',
+        application_method: 'direct',
+        response: 'rejection',
+        comment: 'comment'
+      )
+      put "/api/v1/job_applications/#{job_application.id}", params: {
+        job_application: {
+          date: '',
+          job_title: '',
+          company: ' ',
+          application_method: '',
+          response: '',
+          comment: ''
+        }
+      }
+      errors = JSON.parse(response.body)['errors']
+      expect(response.content_type).to include('application/json')
+      expect(errors).to_not be(nil)
     end
   end
 
