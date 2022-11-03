@@ -1,4 +1,4 @@
-class Application < ApplicationRecord
+class JobApplication < ApplicationRecord
   validates :job_title, presence: true
   validates :company, presence: true
   validates :application_method, presence: true

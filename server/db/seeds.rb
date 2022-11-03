@@ -1,7 +1,7 @@
 require 'csv'
 
 # reset database
-Application.delete_all
+JobApplication.delete_all
 
 # load csv
 application_csv = File.read(Rails.root.join('db','csv', 'jobapplication_seed.csv'))
@@ -11,7 +11,7 @@ p 'reading csv'
 data = CSV.parse(application_csv, headers: true,encoding: 'ISO-8859-1')
 counter = 0
 data.each do |row|
-  d = Application.create(
+  d = JobApplication.create(
     date: row['date'],
     job_title: row['job_title'],
     company: row['company'],
