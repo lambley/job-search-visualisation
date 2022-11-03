@@ -84,6 +84,20 @@ RSpec.describe 'JobApplications', type: :request do
     end
 
     it 'redirects to show on successful creation' do
+      post '/api/v1/job_applications', params: {
+        job_application: {
+          date: '21/10/2022',
+          job_title: 'test',
+          company: 'test company',
+          application_method: 'direct',
+          response: 'rejection',
+          comment: 'comment'
+        }
+      }
+
+      job_application_id = JSON.parse(response.body)['id']
+
+      expect(response.headers['Location']).to eq("/api/v1/job_applications/#{job_application_id}")
     end
 
     it 'responds with a 422 when given invalid inputs' do
