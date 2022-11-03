@@ -17,6 +17,12 @@ RSpec.describe 'JobApplications', type: :request do
       count = JobApplication.all.count
       expect(assigns(:job_applications).count).to eq(count)
     end
+
+    it 'renders json with status 200' do
+      get '/api/v1/job_applications'
+      expect(response.content_type).to include('application/json')
+      expect(response).to have_http_status(200)
+    end
   end
 
   describe 'GET /show' do

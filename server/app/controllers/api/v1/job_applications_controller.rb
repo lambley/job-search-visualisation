@@ -1,6 +1,7 @@
 class Api::V1::JobApplicationsController < ApplicationController
   def index
     @job_applications = JobApplication.all
+    render json: @job_applications, status: :ok
   end
 
   def show
