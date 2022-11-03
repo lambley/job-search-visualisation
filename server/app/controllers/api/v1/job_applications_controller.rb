@@ -13,7 +13,7 @@ class Api::V1::JobApplicationsController < ApplicationController
     if @job_application.save
       render json: @job_application, status: :created, location: api_v1_job_application_path(@job_application)
     else
-      render json: { errors: @job_application.errors }
+      render json: { errors: @job_application.errors }, status: :unprocessable_entity
     end
   end
 
