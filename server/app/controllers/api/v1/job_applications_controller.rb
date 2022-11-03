@@ -6,6 +6,7 @@ class Api::V1::JobApplicationsController < ApplicationController
 
   def show
     @job_application = JobApplication.find(params[:id])
+    render json: @job_application, status: :ok
   end
 
   def create

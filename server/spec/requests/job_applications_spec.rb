@@ -51,6 +51,20 @@ RSpec.describe 'JobApplications', type: :request do
       get "/api/v1/job_applications/#{job_application.id}"
       expect(assigns(:job_application)).to eq(job_application)
     end
+
+    it 'renders json with status 200' do
+      job_application = JobApplication.create(
+        date: '21/10/2022',
+        job_title: 'test',
+        company: 'test company',
+        application_method: 'direct',
+        response: 'rejection',
+        comment: 'comment'
+      )
+      get "/api/v1/job_applications/#{job_application.id}"
+      expect(response.content_type).to include('application/json')
+      expect(response).to have_http_status(200)
+    end
   end
 
   describe 'GET /create' do
