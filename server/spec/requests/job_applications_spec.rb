@@ -68,7 +68,19 @@ RSpec.describe 'JobApplications', type: :request do
       expect(response.content_type).to include('application/json')
     end
 
-    it 'responds with a 201 and assigns new instance when given valid inputs' do
+    it 'responds with a 201 given valid inputs' do
+      post '/api/v1/job_applications', params: {
+        job_application: {
+          date: '21/10/2022',
+          job_title: 'test',
+          company: 'test company',
+          application_method: 'direct',
+          response: 'rejection',
+          comment: 'comment'
+        }
+      }
+
+      expect(response).to have_http_status(:created)
     end
 
     it 'redirects to show on successful creation' do

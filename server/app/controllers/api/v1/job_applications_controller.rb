@@ -24,6 +24,6 @@ class Api::V1::JobApplicationsController < ApplicationController
   private
 
   def job_application_params
-    params.require(:job_application).permit(:date, :job_title, :company, :job_application_method, :response, :comment)
+    params.require(:job_application).permit(:date, :job_title, :company, :application_method, :response, :comment)
   end
 end
