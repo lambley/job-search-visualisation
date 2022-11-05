@@ -3,12 +3,15 @@ class JobApplication < ApplicationRecord
   initial_response_types = [
     'no reply',
     'reply',
-    'rejection'
+    'rejection',
+    'awaiting response'
   ]
 
   first_interview_types = [
     'first interview',
-    'rejection'
+    'rejection',
+    nil,
+    ''
   ]
 
   technical_task_types = [
@@ -16,22 +19,31 @@ class JobApplication < ApplicationRecord
     'no task required',
     'rejection',
     'rejected by me',
-    'technical task'
+    'technical task',
+    nil,
+    ''
   ]
 
   second_interview_types = [
     'no reply',
-    'second interview'
+    'second interview',
+    nil,
+    ''
   ]
 
   offer_received_types = [
+    'waiting for offer',
     'offer received',
-    'rejected before offer'
+    'rejected before offer',
+    nil,
+    ''
   ]
 
   offer_accepted_types = [
     'offer accepted',
-    'offer rejected'
+    'offer rejected',
+    nil,
+    ''
   ]
 
   # validation
