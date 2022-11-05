@@ -16,18 +16,18 @@ data.each do |row|
     job_title: row['job_title'],
     company: row['company'],
     application_method: row['application_method'],
-    initial_response: row['initial_response'],
-    first_interview: row['first_interview'],
-    technical_task: row['technical_task'],
-    second_interview: row['second_interview'],
-    offer_received: row['offer_received'],
-    offer_accepted: row['offer_accepted']
+    initial_response: row['initial_response'].to_s.downcase,
+    first_interview: row['first_interview'].to_s.downcase,
+    technical_task: row['technical_task'].to_s.downcase,
+    second_interview: row['second_interview'].to_s.downcase,
+    offer_received: row['offer_received'].to_s.downcase,
+    offer_accepted: row['offer_accepted'].to_s.downcase
   )
   # print errors if any
   if d.errors.size > 0
     p ''
-    puts d.job_title
-    puts d.errors
+    puts "Error creating #{d.job_title}"
+    d.errors.each { |error| puts "Error: #{error.type} - #{error.options}" }
   end
 
   counter += 1 if d.persisted?
