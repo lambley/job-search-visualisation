@@ -27,6 +27,7 @@ class JobApplication < ApplicationRecord
   second_interview_types = [
     'no reply',
     'second interview',
+    'rejection',
     nil,
     ''
   ]
