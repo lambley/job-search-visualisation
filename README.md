@@ -12,3 +12,9 @@ Finding my first developer role has been a gruelling process - and I'm still sea
 - I have opted for a complete TDD approach with this project
 -  Backend tests for models and requests uses [`Rspec`](https://rspec.info/)
 -  Fronend tests will use [`Jest`](https://jestjs.io/docs/getting-started)
+
+# Example Sankey Diagram using SankeyMATIC
+
+Chart that I will use for now - while I'm figuring out how to use D3
+
+![image](https://user-images.githubusercontent.com/42571140/200118971-44a9d4e6-442b-4bf9-a343-49fdbc11055c.png)
