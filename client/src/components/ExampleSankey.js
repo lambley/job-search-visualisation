@@ -1,13 +1,19 @@
-const ExampleSankey = ({ width, height }) => {
+const ExampleSankey = () => {
   return (
     <svg
       viewBox="0 0 800 800"
       preserveAspectRatio="xMidYMin slice"
-      height={height}
-      width={width}
+      height="auto"
+      width="100%"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect height="600" width="800" fill="#ffffff"></rect>
+      <rect
+        height="600"
+        width="800"
+        fill="#ffffff"
+        stroke="rgb(200,200,200)"
+        stroke-width="1"
+      ></rect>
       <g transform="translate(8,18)">
         <g id="sankey_flows">
           <path
