@@ -4,14 +4,14 @@ Finding my first developer role has been a gruelling process - and I'm still sea
 
 ## Running the app
 
-- Server - run `rails s`
-- Client - run `npm start`
+- Server - run `rails s` - runs on local port 3000
+- Client - run `npm start` - runs on local port 4000
 
-## TDD 
+## TDD
 
 - I have opted for a complete TDD approach with this project
--  Backend tests for models and requests uses [`Rspec`](https://rspec.info/)
--  Fronend tests will use [`Jest`](https://jestjs.io/docs/getting-started)
+- Backend tests for models and requests uses [`Rspec`](https://rspec.info/)
+- Fronend tests will use [`Jest`](https://jestjs.io/docs/getting-started)
 
 # Example Sankey Diagram using SankeyMATIC
 
