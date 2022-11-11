@@ -1,12 +1,8 @@
+// fonts
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,200&display=swap');
 
+// external libraries
 @import '~bootstrap/scss/bootstrap.scss';
 
-body {
-  font-family: 'Roboto Mono', monospace;
-}
-
-h1, h2, h3, h4, h5 {
-  font-family: 'Roboto Mono', monospace;
-  font-weight: bold;
-}
+// custom css
+@import './app.scss'
