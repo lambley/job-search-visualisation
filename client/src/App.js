@@ -1,12 +1,10 @@
 import ExampleSankey from './components/ExampleSankey';
+import NavMain from './components/NavMain';
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-center">
-        <img src="logo192.png" alt="" style={{ height: '1em' }} /> Job Search
-        Visualisation
-      </h1>
+      <NavMain />
 
       <div className="text-center">
         <p>
@@ -20,7 +18,7 @@ function App() {
       </div>
 
       <div className="center-diagram">
-        <ExampleSankey width={600} height={600} />
+        <ExampleSankey width={1000} height={1000} />
       </div>
     </div>
   );
