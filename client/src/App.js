@@ -17,8 +17,8 @@ function App() {
         </p>
       </div>
 
-      <div className="center-diagram">
-        <ExampleSankey width={1000} height={1000} />
+      <div className="center-diagram diagram-border">
+        <ExampleSankey/>
       </div>
     </div>
   );
