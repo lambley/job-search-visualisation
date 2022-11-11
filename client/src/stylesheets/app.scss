@@ -8,5 +8,10 @@ h1, h2, h3, h4, h5 {
 }
 
 .center-diagram {
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
+  resize: horizontal;
+  width: 80%;
+  height: auto;
 }
