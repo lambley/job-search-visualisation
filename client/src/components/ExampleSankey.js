@@ -1,8 +1,12 @@
-const ExampleSankey = () => {
+const ExampleSankey = ({ width, height }) => {
   return (
-    <svg height="600" width="800" xmlns="http://www.w3.org/2000/svg">
-      <title>Your Diagram Title</title>
-
+    <svg
+      viewBox="0 0 800 800"
+      preserveAspectRatio="xMidYMin slice"
+      height={height}
+      width={width}
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <rect height="600" width="800" fill="#ffffff"></rect>
       <g transform="translate(8,18)">
         <g id="sankey_flows">
