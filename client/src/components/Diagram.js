@@ -4,6 +4,7 @@ const Diagram = () => {
   return (
     <div>
       <div className="text-center">
+        <h1>Sankey Diagram</h1>
         <p>
           Example Sankey Diagram created with{' '}
           <a href="https://sankeymatic.com/build/">Sankeymatic</a>
