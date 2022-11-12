@@ -2,9 +2,9 @@ import { Nav, Navbar, Container } from 'react-bootstrap';
 
 const NavMain = () => {
   return (
-    <Navbar sticky='top' bg="light" expand="sm">
+    <Navbar sticky="top" bg="light" expand="sm">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img
             src="logo192.png"
             alt=""
@@ -17,8 +17,8 @@ const NavMain = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#diagram">Diagram</Nav.Link>
-            <Nav.Link href="#list">List</Nav.Link>
+            <Nav.Link href="diagram">Diagram</Nav.Link>
+            <Nav.Link href="list">List</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
