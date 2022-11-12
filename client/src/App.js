@@ -17,7 +17,7 @@ function App() {
         </p>
       </div>
 
-      <div className="center-diagram diagram-border">
+      <div className="center-diagram">
         <ExampleSankey/>
       </div>
     </div>
