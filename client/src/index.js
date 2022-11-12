@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import Home from './components/Home';
 import Diagram from './components/Diagram';
 import List from './components/List';
 import NavMain from './components/NavMain';
@@ -12,9 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <BrowserRouter>
-    <NavMain /> 
+    <NavMain />
     <Routes>
-      <Route path="/" element={<App />}></Route>
+      <Route path="/" element={<Home />}></Route>
       <Route path="/diagram" element={<Diagram />}></Route>
       <Route path="/list" element={<List />}></Route>
       <Route
