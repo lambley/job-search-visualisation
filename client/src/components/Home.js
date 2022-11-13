@@ -19,7 +19,6 @@ const Home = () => {
 
   // TODO refactor to table
   const renderJobApplications = () => {
-    console.log(jobApplications);
     return jobApplications.map((jobApplication) => {
       return (
         <li key={jobApplication.id}>
