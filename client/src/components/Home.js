@@ -14,6 +14,7 @@ const Home = () => {
   // ensure fetchJobApplications is called once only
   useEffect(() => {
     fetchJobApplications();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // TODO refactor to table
