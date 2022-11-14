@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Api from '../helper/api';
+import JobTable from './JobTable';
 
 const Home = () => {
   const [jobApplications, setJobApplications] = useState([]);
+
+  const columnNames = ['Date', 'Job Title', 'Application Method'];
 
   const api = new Api();
   const fetchJobApplications = async () => {
@@ -16,19 +19,6 @@ const Home = () => {
     fetchJobApplications();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // TODO refactor to table
-  const renderJobApplications = () => {
-    return jobApplications.map((jobApplication) => {
-      return (
-        <li key={jobApplication.id}>
-          {jobApplication.date} | <strong>Title</strong>:{' '}
-          {jobApplication.job_title} | <strong>Method</strong>:{' '}
-          {jobApplication.application_method}
-        </li>
-      );
-    });
-  };
 
   return (
     <div>
@@ -43,7 +33,8 @@ const Home = () => {
           data
         </p>
       </div>
-      <ul>{renderJobApplications()}</ul>
+      <JobTable columnNames={columnNames} jobApplications={jobApplications} />
+      {/* <ul>{renderJobApplications()}</ul> */}
     </div>
   );
 };
