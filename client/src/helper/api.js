@@ -18,6 +18,7 @@ export default class Api {
     // set headers here
     const headers = {
       Accept: 'application/json',
+      'Content-Type': 'application/json; charset=utf-8',
     };
 
     // at id to baseurl if present
