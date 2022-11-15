@@ -33,7 +33,10 @@ const Home = () => {
           data
         </p>
       </div>
-      <JobTable columnNames={columnNames} jobApplications={jobApplications} />
+      <hr />
+      <div className="text-center">
+        <JobTable columnNames={columnNames} jobApplications={jobApplications} />
+      </div>
     </div>
   );
 };
