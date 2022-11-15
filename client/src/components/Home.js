@@ -34,7 +34,6 @@ const Home = () => {
         </p>
       </div>
       <JobTable columnNames={columnNames} jobApplications={jobApplications} />
-      {/* <ul>{renderJobApplications()}</ul> */}
     </div>
   );
 };
