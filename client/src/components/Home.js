@@ -35,7 +35,14 @@ const Home = () => {
       </div>
       <hr />
       <div className="text-center">
-        <JobTable columnNames={columnNames} jobApplications={jobApplications} />
+        {jobApplications.length > 0 ? (
+          <JobTable
+            columnNames={columnNames}
+            jobApplications={jobApplications}
+          />
+        ) : (
+          <h3>No Data to show at this time</h3>
+        )}
       </div>
     </div>
   );
