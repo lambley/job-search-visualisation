@@ -6,7 +6,7 @@ const NavMain = () => {
       <Container>
         <Navbar.Brand href="/">
           <img
-            src="logo192.png"
+            src="/logo192.png"
             alt=""
             width="30"
             height="30"
