@@ -17,8 +17,8 @@ root.render(
     <Routes>
       <Route path="/" element={<Home />}></Route>
       <Route path="/diagram" element={<Diagram />}></Route>
-      <Route path="/list" element={<List />}></Route>
       <Route path="/list/:id" element={<JobTableItem />}></Route>
+      <Route path="/list" element={<List />}></Route>
       <Route
         path="*"
         element={
