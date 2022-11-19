@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Api from '../helper/api';
-import JobTable from './JobTable';
+import JobTable from '../components/JobTable';
 
 const List = () => {
   const [jobApplications, setJobApplications] = useState([]);

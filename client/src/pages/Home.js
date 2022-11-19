@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Api from '../helper/api';
-import JobTable from './JobTable';
+import JobTable from '../components/JobTable';
 
 const Home = () => {
   const [jobApplications, setJobApplications] = useState([]);

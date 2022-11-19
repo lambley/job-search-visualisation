@@ -1,4 +1,4 @@
-import ExampleSankey from './ExampleSankey';
+import ExampleSankey from '../components/ExampleSankey';
 
 const Diagram = () => {
   return (

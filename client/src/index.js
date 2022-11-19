@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from './components/Home';
-import Diagram from './components/Diagram';
-import List from './components/List';
+import Home from './pages/Home';
+import Diagram from './pages/Diagram';
+import List from './pages/List';
 import NavMain from './components/NavMain';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -19,6 +19,7 @@ root.render(
       <Route path="diagram" element={<Diagram />}></Route>
       <Route path="list">
         <Route index element={<List />}></Route>
+        {/* <Route path="new" element={<JobNew />}></Route> */}
         <Route path=":id" element={<JobTableItem />}></Route>
       </Route>
 
