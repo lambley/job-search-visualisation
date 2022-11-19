@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Diagram from './pages/Diagram';
 import List from './pages/List';
 import NavMain from './components/NavMain';
+import JobNew from './pages/JobNew';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './stylesheets/index.scss';
@@ -19,7 +20,7 @@ root.render(
       <Route path="diagram" element={<Diagram />}></Route>
       <Route path="list">
         <Route index element={<List />}></Route>
-        {/* <Route path="new" element={<JobNew />}></Route> */}
+        <Route path="new" element={<JobNew />}></Route>
         <Route path=":id" element={<JobTableItem />}></Route>
       </Route>
 
