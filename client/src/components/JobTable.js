@@ -11,7 +11,8 @@ const JobTable = ({ jobApplications, columnNames }) => {
   };
 
   const renderRowData = () => {
-    if (jobApplications) {
+    // check if more than pne object to render
+    if (jobApplications && jobApplications.length > 1) {
       return jobApplications.map((jobApplication) => {
         return (
           <tr key={jobApplication.id}>
@@ -25,6 +26,20 @@ const JobTable = ({ jobApplications, columnNames }) => {
           </tr>
         );
       });
+    }
+    // render one object
+    else {
+      return (
+        <tr key={jobApplications.id}>
+          <td>{jobApplications.date}</td>
+          <td>
+            <Link to={`/list/${jobApplications.id}`}>
+              {jobApplications.job_title}
+            </Link>
+          </td>
+          <td>{jobApplications.application_method}</td>
+        </tr>
+      );
     }
   };
 
