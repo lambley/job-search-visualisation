@@ -15,10 +15,13 @@ root.render(
   <BrowserRouter>
     <NavMain />
     <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/diagram" element={<Diagram />}></Route>
-      <Route path="/list/:id" element={<JobTableItem />}></Route>
-      <Route path="/list" element={<List />}></Route>
+      <Route index element={<Home />}></Route>
+      <Route path="diagram" element={<Diagram />}></Route>
+      <Route path="list">
+        <Route index  element={<List />}></Route>
+        <Route path=":id" element={<JobTableItem />}></Route>
+      </Route>
+
       <Route
         path="*"
         element={
