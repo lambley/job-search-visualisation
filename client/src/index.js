@@ -7,6 +7,7 @@ import NavMain from './components/NavMain';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './stylesheets/index.scss';
+import JobTableItem from './components/JobTableItem';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -17,6 +18,7 @@ root.render(
       <Route path="/" element={<Home />}></Route>
       <Route path="/diagram" element={<Diagram />}></Route>
       <Route path="/list" element={<List />}></Route>
+      <Route path="/list/:id" element={<JobTableItem />}></Route>
       <Route
         path="*"
         element={

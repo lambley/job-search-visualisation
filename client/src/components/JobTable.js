@@ -1,4 +1,5 @@
 import { Table, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const JobTable = ({ jobApplications, columnNames }) => {
   const renderColumnNames = () => {
@@ -15,7 +16,11 @@ const JobTable = ({ jobApplications, columnNames }) => {
         return (
           <tr key={jobApplication.id}>
             <td>{jobApplication.date}</td>
-            <td>{jobApplication.job_title}</td>
+            <td>
+              <Link to={`/list/${jobApplication.id}`}>
+                {jobApplication.job_title}
+              </Link>
+            </td>
             <td>{jobApplication.application_method}</td>
           </tr>
         );
