@@ -7,7 +7,7 @@ const JobNew = () => {
     if (!values.date) {
       errors.date = '*Required';
     } else if (values.date > new Date()) {
-      errors.date = "Date cannot be in the future"
+      errors.date = 'Date cannot be in the future';
     }
 
     if (!values.jobTitle) {
