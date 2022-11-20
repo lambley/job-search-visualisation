@@ -43,4 +43,13 @@ export default class Api {
     this.jobApplicationId = jobApplicationId;
     return this.init().get();
   };
+
+  create = (jobApplication) => {
+    const { date, jobTitle, applicationMethod } = jobApplication;
+    return this.init().post({
+      date: date,
+      job_title: jobTitle,
+      application_method: applicationMethod,
+    });
+  };
 }
