@@ -9,7 +9,7 @@ const JobTableItem = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
 
-  const columnNames = ['Date', 'Job Title', 'Application Method'];
+  const columnNames = ['Date', 'Company', 'Job Title', 'Application Method'];
 
   const api = new Api();
   const fetchJobApplication = async () => {

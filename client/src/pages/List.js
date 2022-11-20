@@ -7,7 +7,7 @@ import JobTable from '../components/JobTable';
 const List = () => {
   const [jobApplications, setJobApplications] = useState([]);
 
-  const columnNames = ['Date', 'Job Title', 'Application Method'];
+  const columnNames = ['Date', 'Company', 'Job Title', 'Application Method'];
 
   const navigate = useNavigate();
   const handleOnClick = useCallback(

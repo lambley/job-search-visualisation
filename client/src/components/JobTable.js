@@ -17,6 +17,7 @@ const JobTable = ({ jobApplications, columnNames }) => {
         return (
           <tr key={jobApplication.id}>
             <td>{jobApplication.date}</td>
+            <td>{jobApplication.company}</td>
             <td>
               <Link to={`/list/${jobApplication.id}`}>
                 {jobApplication.job_title}
@@ -32,6 +33,7 @@ const JobTable = ({ jobApplications, columnNames }) => {
       return (
         <tr key={jobApplications.id}>
           <td>{jobApplications.date}</td>
+          <td>{jobApplications.company}</td>
           <td>
             <Link to={`/list/${jobApplications.id}`}>
               {jobApplications.job_title}
