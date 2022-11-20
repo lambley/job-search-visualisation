@@ -17,6 +17,7 @@ const DatePickerField = ({ ...props }) => {
       {...props}
       dateFormat="dd/MM/yyyy"
       locale="enGB"
+      maxDate={new Date()}
       selected={(field.value && new Date(field.value)) || null}
       onChange={(val) => {
         setFieldValue(field.name, val);
