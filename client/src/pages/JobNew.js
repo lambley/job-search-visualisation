@@ -1,5 +1,6 @@
 import { Formik, Field, Form } from 'formik';
 import DatePickerField from '../components/DatePickerField';
+import Api from '../helper/api';
 
 const JobNew = () => {
   const validate = (values) => {
@@ -21,6 +22,12 @@ const JobNew = () => {
     return errors;
   };
 
+  const api = new Api();
+  const handleSubmit = async (event) => {
+    console.log(event);
+    // const res = await api.create()
+  };
+
   return (
     <div>
       <h1 className="text-center">Create new Job Application</h1>
@@ -32,9 +39,7 @@ const JobNew = () => {
             applicationMethod: '',
           }}
           validate={validate}
-          onSubmit={(values) => {
-            alert(JSON.stringify(values, null, 2));
-          }}
+          onSubmit={handleSubmit}
         >
           {(props) => (
             <Form>
